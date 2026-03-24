@@ -1,0 +1,23 @@
+﻿@{
+ViewBag.Title = "Error";
+}
+
+<div class="container-sm h-100 align-content-center justify-items-center">
+    <div class="card mvw-40" >
+        <img src="@Html.Raw(GlobalConfiguration.colectaConfig.Images["error:normal"].ToString())" class="w-100"
+            alt="...">
+        <div class="card-body d-flex flex-column align-items-center text-center">
+            <h5 class="text-red tx-title-1">Lo sentimos, ha ocurrido un error con la transacción.</h5>
+            <p class="card-text">Lo sentimos, ha ocurrido un error con su transacción, por favor reintentar. Si el error
+                persiste, favor contactar a nuestra mesa de ayuda al teléfono <strong>+569 9369 0256</strong> o al
+                correo
+                electrónico <strong>colecta@coaniquem.org</strong></p>
+            <a href="/" class="btn-rounded-nice bg-red">Volver a donar en la página principal</a>
+            <img src="~/img/logo.png" height="100" alt="logo_coaniquem" />
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+}

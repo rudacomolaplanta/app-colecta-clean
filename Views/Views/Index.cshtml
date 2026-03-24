@@ -1,0 +1,141 @@
+﻿@{
+    ViewBag.Title = "Desafío Coaniquem";
+}
+
+<div class="row w-100 g-0 g-lg-4 g-xl-4 align-middle">
+    <div class="lateral d-none d-lg-block col-xl-6 col-lg-6 animation-zidex pos-relative pad-600-3">
+        <img src="/img/regular_lateral_1080x1080.png" />
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-12">
+        <!--Cabecera-->
+        <div class="row d-none d-lg-block">
+            <div class="col-lg-12 d-flex justify-content-end">
+                <img class="logo_coaniquem" src="~/img/logo.png" alt="logo_coaniquem" />
+            </div>
+        </div>
+        <img src="/img/regular_lateral_500x300.png" class="w-100 d-block d-lg-none" />
+        <div class="pad-600-2">
+            <!--monto-->
+            <div class="row mt-3">
+                <div class="col-lg-12">
+                    <h5 class="text-red font-weight-boldy">INGRESA EL MONTO QUE QUIERES DONAR</h5>
+                    <input type="text" inputmode="numeric" min="500" class="input-monto w-100" placeholder="$" name="valor" id="valor">
+                </div>
+                <div class="col-lg-12 d-flex justify-content-start align-items-center">
+                    <input id="email" type="email" placeholder="CORREO ELECTRÓNICO" class="input-correo mt-2 w-100">
+                    <img src="/img/campana2022/question-icon.png" class="mb-1 btn-ques-email" height="25">
+                </div>
+            </div>
+            <!--botonera-->
+            <div class="row mt-3">
+                <h5 class="text-red font-weight-boldy mb-1">SELECCIONA TU MEDIO DE PAGO</h5>
+                <div class="d-flex flex-wrap align-items-center justify-content-center">
+                    <div class="d-flex flex-column justify-content-center align-items-center flex">
+                        <img id="btn-webpay" name="webpay" class="pointer btn-mediopago" src="~/img/2023/botones/webpay.jpg" alt="webpay">
+                        <span class="btn-mediopago-label">Débito o crédito</span>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center flex d-none">
+                        <img id="btn-bancoestado" name="bestado" class="pointer btn-mediopago" src="~/img/2023/botones/banco_estado.jpg" alt="BancoEstado">
+                        <span class="btn-mediopago-label">Transferencia con <br>banco estado</span>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center flex">
+                        <img id="btn-bancosantander" name="santander" class="pointer btn-mediopago" src="~/img/2023/botones/santander.jpg" alt="Santander">
+                        <span class="btn-mediopago-label">Transferencia con <br>banco Santander</span>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center flex">
+                        <img id="btn-khipu" name="khipu" class="pointer btn-mediopago" src="~/img/2023/botones/knipu.jpg" alt="Khipu">
+                        <span class="btn-mediopago-label">Transferencia desde <br>todos los bancos</span>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center flex">
+                        <img id="btn-servipag" name="servipag" class="pointer btn-mediopago" src="~/img/2023/botones/servipag.jpg" alt="ServiPag">
+                        <span class="btn-mediopago-label">Transferencia desde <br>todos los bancos</span>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center flex">
+                        <img id="btn-flow" name="flow" class="pointer btn-mediopago" src="~/img/2023/botones/flow.jpg" alt="Flow">
+                        <span class="btn-mediopago-label">Transferencia desde <br>todos los bancos</span>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center flex d-none">
+                        <img id="btn-paypal" name="paypay" class="pointer btn-mediopago" src="~/img/2023/botones/paypal.jpg" alt="PayPal">
+                        <span class="btn-mediopago-label">Pago internacional</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center flex-wrap mt-3">
+                    <div class="mx-2">
+                        <img src="~/img/botones/logo_estado.png" class="p-1" alt="logo_estado" height="40">
+                        <div class="rounded align-items-center border-0">
+                            <div class="tx-paragraph-1 p-1 align-items-center">
+                                <div class="p-2 d-flex flex-column">
+                                    <span>Transferencia <strong>Banco Estado</strong></span>
+                                    <span class="text-muted fw-bold">Corporación COANIQUEM</span>
+                                    <span><strong>Cuenta corriente:</strong> 4008588</span>
+                                    <span><strong>RUT:</strong> 70.715.400-4</span>
+                                    <span><strong>Email:</strong> colecta@coaniquem.org</span>
+                                    <button type="button" id="btn-copy-bestado" class="btn btn-dark btn-sm p-0 px-2 mt-2 w-100 border border-dark shadow">Copiar datos</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mx-2">
+                        <img src="~/img/botones/logo_santander.png" alt="logo_santander" height="40">
+                        <div class="rounded align-items-center border-0" >
+                            <div class="tx-paragraph-1 p-1 align-items-center">
+                                <div class="p-2 d-flex flex-column">
+                                    <span>Transferencia <strong>Banco Santander</strong></span>
+                                    <span class="text-muted fw-bold">Corporación COANIQUEM</span>
+                                    <span><strong>Cuenta corriente:</strong> 65-5</span>
+                                    <span><strong>RUT:</strong> 70.715.400-4</span>
+                                    <span><strong>Email:</strong> colecta@coaniquem.org</span>
+                                    <button type="button" id="btn-copy-santander" class="btn btn-dark btn-sm p-0 px-2 mt-2 w-100 border border-dark shadow">Copiar datos</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalRedPay" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen-md-down modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex flex-column align-items-center">
+                <div id="qrcontainer" class="" style="align-items:center;"></div>
+                <span id="" class="token_number input text-muted h4 fw-bolder"></span>
+                <span class="text-muted">Tienes <span class="fw-bolder" id="time">05:00</span> para validar el pago</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalRedPay-mobile" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen-md-down modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex flex-column align-items-center">
+                <img src="~/img/campanalosheroes/redpay/RP_COLOR_H.png" class="w-100" />
+                <span class="input text-muted h4 fw-bolder">Se generó un token de pago, presione aquí para ir a pagar o cierre la ventana para cancelar.</span>
+                <!--<span id="" class="token_number input text-muted h6"></span>-->
+                <button id="btnDirectOpen" class="btn btn-primary my-2">Ir a pagar</button>
+                <span class="text-muted">Tienes <span class="fw-bolder" id="time2">05:00</span> para validar el pago</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="r" value="MAIN" />
+
+@section Scripts
+    {
+    <script src="~/js/coaniquem/index.js" charset="utf-8" type="module" asp-append-version="true"></script>
+    <script src="~/js/mediosdepago.js" charset="utf-8" type="module" asp-append-version="true"></script>
+    <script src="~/js/amount.js" charset="utf-8" type="module" asp-append-version="true"></script>
+    <script src="~/js/ayudas.js" charset="utf-8" type="module" asp-append-version="true"></script>
+}

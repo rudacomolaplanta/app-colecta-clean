@@ -1,0 +1,268 @@
+﻿html{
+    font-family: "Filson Pro Bold" !important;
+}
+
+body {
+    font-family: "Filson Pro Bold" !important;
+}
+
+.font-red {
+    color: rgba(227, 6, 19) !important;
+}
+
+.bg-red {
+    background-color: #d80f21!important;
+    border-style: none;
+    border-color: white !important;
+}
+
+.bg-gray {
+    background-color: #bbb!important;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.bg-gray-light {
+    background-color: #ccc!important;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.bg-gray-light-2 {
+    background-color: #ddd;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.gray-card {
+    border-style: solid;
+    /*box-shadow: 0 0 15px 4px rgba(227, 6, 19,0.4);*/
+    border-radius: 15px;
+    border-color: #bbb;
+}
+
+.red-card {
+    border: 5px;
+    border-style: solid;
+    /*box-shadow: 0 0 15px 4px rgba(227, 6, 19,0.4);*/
+    border-radius: 15px;
+    border-color: rgba(227, 6, 19);
+}
+
+.text-red {
+    color: #d80f21;
+}
+
+.bg-red {
+    background-color: #d80f21!important;
+}
+
+.font-weight-boldy {
+    font-weight: 700;
+}
+
+.logo_coaniquem {
+    height: 120px;
+}
+
+.input-monto {
+    padding: 20px;
+    height: max(50px, 5rem) !important;
+    font-size: max(30px, 3rem) !important;
+    border: 0px;
+    border-radius: 50px;
+    border-color: #d80f21;
+    border-style: solid;
+    background-color: rgba(0,0,0,0.2);
+}
+
+    .input-monto:focus {
+        outline: none;
+    }
+
+.input-monto-clh {
+    padding: 10px;
+    height: max(50px, 5rem) !important;
+    font-size: max(30px, 3rem) !important;
+    border: 0px;
+    border-bottom: 2px;
+    border-color: #d80f21;
+    border-style: solid;
+}
+
+    .input-monto-clh:focus {
+        border: 0px;
+    }
+
+.input-correo {
+    padding: 8px;
+    font-size: max(15px, 1vw) !important;
+    border: 0px;
+    color: black;
+    border-bottom: 0px;
+    border-radius: 30px;
+    border-color: #d80f21;
+    border-style: solid;
+    background-color: rgba(0,0,0,0.15);
+}
+
+    .input-correo:focus {
+        outline: none;
+    }
+
+    .input-correo::placeholder {
+        font-weight: 400;
+        padding-left: 10px;
+        color: #444;
+        opacity: 1; /* Firefox */
+    }
+
+.input-correo-clh {
+    padding: 5px;
+    font-size: max(15px, 1vw) !important;
+    border: 0px;
+    border-bottom: 2px;
+    border-color: #d80f21;
+    border-style: solid;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.vw-40 {
+    width: 40vw;
+}
+
+.mvw-38 {
+    width: 38vw;
+    min-width: 350px!important;
+}
+
+.mvw-40 {
+    width: 40vw;
+    min-width: 350px!important;
+}
+
+.mvw-80 {
+    width: 80vw;
+    min-width: 350px!important;
+}
+
+.justify-items-center{
+    justify-items: center!important;
+}
+
+.vw-30 {
+    width: 30vw;
+}
+
+/*Scrollbar*/
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+.btn-mediopago {
+    margin: 5px;
+    height: max(65px, 3.5vw) !important;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(213, 205, 205, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.btn-mediopago-label{
+    background-color: #DDD;
+    padding: 2px 4px;
+    border-radius: 3px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Filson Pro Regular' !important;
+    font-size: 10px!important;
+    color: #999;
+    line-height: 1.1;
+}
+
+.lateral {
+    align-content: center;
+}
+
+    .lateral img {
+        width: 100%;
+        object-fit: contain;
+    }
+
+#main-container {
+    align-content: center;
+}
+
+.tx-10{
+    font-size: 10px!important;
+}
+
+.tx-11{
+    font-size: 11px!important;
+}
+
+.tx-12{
+    font-size: 12px!important;
+}
+
+.tx-title-1{
+    font-size: max(19px, 2.2vw);
+}
+
+.tx-1vw {
+    font-size: 1vw;
+}
+
+.tx-05vw {
+    font-size: 0.5vw;
+}
+
+.tx-08vw {
+    font-size: 0.8vw;
+}
+
+.tx-paragraph-1{
+    font-size: max(12px, 0.8vw);
+}
+
+.bottom-right {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+.btn-rounded-nice{
+    border-radius: 50px;
+    padding: 10px 20px;
+    background-color: #d80f21;
+    text-align: center;
+    color: white;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: max(15px,1.2rem);
+}
+
+    .btn-rounded-nice:hover {
+        background-color: #b70f21;
+        color: #CCC;
+    }
+
+.progress-bar{
+    height: 10px;
+    background-color: red;
+    margin: 3px;
+}

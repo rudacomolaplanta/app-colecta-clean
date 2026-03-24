@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<FileConfiguration>
+	<IdCom>7071540001</IdCom>
+	<PswdCom>as123</PswdCom>
+	<UrlBanco>https://www.eftgroup.cl/mpibsan/gwbsan.asp</UrlBanco>
+	<CheckRequest>N</CheckRequest>
+	<CheckUrl></CheckUrl>
+	<RemoteAddr>127.0.0.1</RemoteAddr>
+	<Server>127.0.0.1</Server>
+	<ServerPort>http://localhost/</ServerPort>
+	<ServerPath>http://localhost/</ServerPath>
+	<ServerSecure>N</ServerSecure>
+	<CheckMethod>POST</CheckMethod>
+	<CheckMonto>N</CheckMonto>
+	<MontoMin>100</MontoMin>
+	<MontoMax>1000000</MontoMax>
+	<MontoTag>TOTAL</MontoTag>
+	<UsaFirmaPKI>S</UsaFirmaPKI>
+	<Firma_PKI_V2>N</Firma_PKI_V2>
+	<PrivateKeyFile>llaves\7071540001_20220421.key</PrivateKeyFile>
+	<LogFile>c:\log\BdpBsan</LogFile>
+	<TrxTimeout>30</TrxTimeout>
+	<NivelDebug>1</NivelDebug>
+	<DelScriptCommentTag>S</DelScriptCommentTag>
+</FileConfiguration>

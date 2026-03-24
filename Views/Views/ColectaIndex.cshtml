@@ -1,0 +1,120 @@
+﻿@{
+    ViewBag.Title = "Colecta Online";
+}
+
+<div class="row w-100 m-0 p-0">
+    <div class="lateral d-none d-lg-block col-xl-6 col-lg-6">
+        <img src="@Html.Raw(GlobalConfiguration.colectaConfig.Images["index:normal"].ToString())" />
+        <!--<span class="text-red p-1 m-0 px-2" style="background-color:#DDD;letter-spacing:-1px;position:fixed; top:5px;left:0; z-index:999; font-size:20px;font-weight:700">Si quieres inscribirte como voluntario ingresa <a href="https://voluntarios.coaniquem.cl" target="_blank">aquí</a></span>-->
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-12 align-content-center">
+        <img src="@Html.Raw(GlobalConfiguration.colectaConfig.Images["index:responsive"].ToString())" class="w-100 d-block d-lg-none" />
+        <div class="pad-600-2">
+            <!--monto-->
+            <div class="row mt-2">
+                <h5 class="text-red font-weight-boldy px-4">INGRESA EL MONTO QUE QUIERES DONAR</h5>
+                <div>   
+                    <input type="text" inputmode="numeric" min="500" class="input-monto w-100" placeholder="$" name="valor" id="valor">
+                </div>
+                <div class="d-flex justify-content-start align-items-center px-3">
+                    <input id="email" type="email" placeholder="CORREO ELECTRÓNICO" class="input-correo mt-2 w-100">
+                    <img src="/img/campana2022/question-icon.png" class="mb-1 btn-ques-email" height="25">
+                </div>
+            </div>
+            <!--botonera-->
+            <div class="row mt-3">
+                <h5 class="text-red font-weight-boldy px-4">SELECCIONA TU MEDIO DE PAGO</h5>
+                <div class="d-flex flex-wrap align-items-center justify-content-center">
+                    <div class="d-flex flex-column justify-content-center align-items-center flex">
+                        <img id="btn-webpay" name="webpay" class="pointer btn-mediopago" src="~/img/2023/botones/webpay.jpg" alt="webpay">
+                        <span class="btn-mediopago-label">Débito o crédito</span>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center flex">
+                        <img id="btn-bancoestado" name="bestado" class="pointer btn-mediopago" src="~/img/2023/botones/banco_estado.jpg" alt="BancoEstado">
+                        <span class="btn-mediopago-label">Transferencia con <br>banco estado</span>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center flex">
+                        <img id="btn-bancosantander" name="santander" class="pointer btn-mediopago" src="~/img/2023/botones/santander.jpg" alt="Santander">
+                        <span class="btn-mediopago-label">Transferencia con <br>banco Santander</span>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center flex">
+                        <img id="btn-khipu" name="khipu" class="pointer btn-mediopago" src="~/img/2023/botones/knipu.jpg" alt="Khipu">
+                        <span class="btn-mediopago-label">Transferencia desde <br>todos los bancos</span>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center flex">
+                        <img id="btn-servipag" name="servipag" class="pointer btn-mediopago" src="~/img/2023/botones/servipag.jpg" alt="ServiPag">
+                        <span class="btn-mediopago-label">Transferencia desde <br>todos los bancos</span>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center flex">
+                        <img id="btn-flow" name="flow" class="pointer btn-mediopago" src="~/img/2023/botones/flow.jpg" alt="Flow">
+                        <span class="btn-mediopago-label">Transferencia desde <br>todos los bancos</span>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center flex">
+                        <img id="btn-paypal" name="paypay" class="pointer btn-mediopago" src="~/img/2023/botones/paypal.jpg" alt="PayPal">
+                        <span class="btn-mediopago-label">Pago internacional</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center flex-wrap mt-3">
+                    <div class="mx-2">
+                        <img src="~/img/botones/logo_estado.png" class="p-1" alt="logo_estado" height="40">
+                        <div class="rounded align-items-center border-0">
+                            <div class="tx-paragraph-1 p-1 align-items-center">
+                                <div class="p-2 d-flex flex-column">
+                                    <span>Transferencia <strong>Banco Estado</strong></span>
+                                    <span class="text-muted fw-bold">Corporación COANIQUEM</span>
+                                    <span><strong>Cuenta corriente:</strong> 4008588</span>
+                                    <span><strong>RUT:</strong> 70.715.400-4</span>
+                                    <span><strong>Email:</strong> colecta@coaniquem.org</span>
+                                    <button type="button" id="btn-copy-bestado" class="btn btn-dark btn-sm p-0 px-2 mt-2 w-100 border border-dark shadow">Copiar datos</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mx-2">
+                        <img src="~/img/botones/logo_santander.png" alt="logo_santander" height="40">
+                        <div class="rounded align-items-center border-0" >
+                            <div class="tx-paragraph-1 p-1 align-items-center">
+                                <div class="p-2 d-flex flex-column">
+                                    <span>Transferencia <strong>Banco Santander</strong></span>
+                                    <span class="text-muted fw-bold">Corporación COANIQUEM</span>
+                                    <span><strong>Cuenta corriente:</strong> 65-5</span>
+                                    <span><strong>RUT:</strong> 70.715.400-4</span>
+                                    <span><strong>Email:</strong> colecta@coaniquem.org</span>
+                                    <button type="button" id="btn-copy-santander" class="btn btn-dark btn-sm p-0 px-2 mt-2 w-100 border border-dark shadow">Copiar datos</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Total 2024: -->
+                <div class="d-flex flex-column justify-content-center flex-wrap text-light rounded p-1 px-5 mt-3">
+                    <div class="d-flex flex-row rounded w-100 text-center align-items-center">
+                        <h6 class="m-0 p-0 text-red">Recaudado total Colecta</h6>
+                        <div class="d-flex flex-row justify-content-end">
+                            <span id="total" class="bg-light text-dark py-1 px-2 m-1 rounded tx-12">$3.703.911 (10%)</span> 
+                            <img id="btn-info" src="~/img/campana2022/question-icon.png" class="mb-1" height="25"/>
+                        </div>
+                    </div>
+                    <div class="progress w-100 my-1 bg-gray-light">
+                        <div id="progressbar" class="progress-bar progress-bar-success active bg-danger rounded" role="progressbar" aria-valuenow="1"
+                            aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                    <span class="w-100 text-center tx-11 text-dark">*Meta: superar resultado Colecta Online 2024 <span class="bg-light py-1 px-2 font-red rounded">$276.900.000</span></span>
+                </div>
+                <!--Total 2024: -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="r" value="MAIN" />
+
+@section Scripts
+    {
+    <script src="~/js/coaniquem/index.js" charset="utf-8" type="module" asp-append-version="true"></script>
+    <script src="~/js/mediosdepago.js" charset="utf-8" type="module" asp-append-version="true"></script>
+    <!--<script src="~/js/dom.imagenes.js" charset="utf-8" type="module"></script>-->
+    <script src="~/js/amount.js" charset="utf-8" type="module" asp-append-version="true"></script>
+    <script src="~/js/ayudas.js" charset="utf-8" type="module" asp-append-version="true"></script>
+}

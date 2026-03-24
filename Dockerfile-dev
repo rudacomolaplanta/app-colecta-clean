@@ -1,0 +1,22 @@
+FROM mcr.microsoft.com/dotnet/sdk:10.0-alpine AS build
+RUN apk update
+RUN apk add curl gnupg 
+#RUN curl -sL https://deb.nodesource.com/setup_20.x  | bash -
+RUN apk add nodejs
+WORKDIR /src
+COPY ["app-colecta.csproj", "."]
+RUN dotnet restore "./app-colecta.csproj"
+COPY . .
+RUN dotnet build "app-colecta.csproj" -c Debug -o ./app/build
+RUN dotnet publish "app-colecta.csproj" -c Debug -o ./app/publish
+
+FROM mcr.microsoft.com/dotnet/sdk:10.0-alpine AS final
+WORKDIR /app
+EXPOSE 10443
+RUN dotnet dev-certs https
+ENV ASPNETCORE_HTTP_PORTS=10443
+ENV ASPNETCORE_URLS=https://+:10443
+ENV ASPNETCORE_ENVIRONMENT=Development
+ENV TZ=America/Santiago
+COPY --from=build /src/app/publish .
+CMD ["dotnet","app-colecta.dll","--urls","https://localhost:10443"]

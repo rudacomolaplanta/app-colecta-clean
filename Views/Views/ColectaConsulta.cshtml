@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Colecta Online | Consulta Alcancía - " + ViewBag.ID;
+}
+
+<div class="row w-100 g-0 g-lg-4 g-xl-4">
+    <div class="lateral d-none d-lg-block col-xl-6 col-lg-6">
+        <img src="@Html.Raw(GlobalConfiguration.colectaConfig.Images["alcancia:normal"].ToString())" />
+        <!--<span class="text-red p-1 m-0 px-2" style="background-color:#DDD;letter-spacing:-1px;position:fixed; top:5px;left:0; z-index:999; font-size:20px;font-weight:700">Si quieres inscribirte como voluntario ingresa <a href="https://voluntarios.coaniquem.cl" target="_blank">aquí</a></span>-->
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-12 pt-4">
+        <img src="@Html.Raw(GlobalConfiguration.colectaConfig.Images["alcancia:responsive"])" class="d-block d-lg-none w-100" />
+        <div class="container pad-600-2">
+            <h1 class="text-red">Resultado colecta</h1>
+            <div class="row mt-2">
+                <div class="col-lg-12">
+                    <h5 class="h5">Ingresa el número/nombre de tu alcancía, tal como aparece en tu link</h5>
+                    <span class="text-light tx-12 text-center bg-dark p-2 rounded">https://desafiocoaniquem.cl/alcancia/<span class="bg-light text-dark py-1 px-2 m-1 rounded">id alcancía</span></span>
+                    <input type="text" class="input-monto mt-2 w-100" placeholder="Ej: 123" name="referencia" id="referencia">
+                </div>
+                <div class="col-lg-12 my-3">
+                    <a id="btnConsultaAlcancia" class="btn-rounded-nice">Consultar resultados</a>
+                    <a class="btn-rounded-nice bg-opacity-75 border-0 btn-regresar">Regresar</a>
+                </div>
+            </div>
+            <!--Resultados alcancía-->
+            <div id="containerResultado" class="row mt-2 px-3 d-none">
+                <div class="resultados col-lg-12">
+                    <h4 class="text-muted">Llevas recaudado en tu alcancía:</h4>
+                    <h6 id="show-monto" class="input-correo"></h6>
+                    <h4 class="text-muted">¡Gracias por tu apoyo!</h4>
+                    <div class="pt-1">
+                        <ul class="bg-red text-light p-2 rounded tx-12">
+                            <li>
+                                1. Recuerda que por razones técnicas de los distintos medios de pago podrás ver los
+                                montos de tu alcancía donados a través de Webpay, Servipag, Banco Santander, Flow y Khipu lo que
+                                corresponde al menos a un 82% de las donaciones recibidas en nuestra última colecta. Las
+                                donaciones realizadas en tu alcancía por Paypal, BancoEstado, transferencias
+                                bancarías y Caja Vecina, lo que equivale al 18% de las donaciones recibidas de
+                                nuestra última colecta, no se verán reflejadas en lo recaudado por tu alcancía,
+                                pero sí estarán aportando al total de nuestra Colecta.
+                            </li>
+                            <li>
+                                2. Tal como el año anterior una vez terminada la Colecta publicaremos un listado con
+                                el total de los aportes recibidos indicando el medio de pago de cada donación, día y
+                                hora.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr>
+                <!--Total 2024: -->
+                <div class="d-flex flex-column justify-content-center flex-wrap text-light rounded p-1 px-5 mt-3">
+                    <div class="d-flex flex-row rounded w-100 text-center align-items-center">
+                        <h6 class="m-0 p-0 text-red">Recaudado total Colecta</h6>
+                        <div class="d-flex flex-row justify-content-end">
+                            <span id="total" class="bg-light text-dark py-1 px-2 m-1 rounded tx-12">$3.703.911 (10%)</span> 
+                            <img id="btn-info" src="~/img/campana2022/question-icon.png" class="mb-1" height="25"/>
+                        </div>
+                    </div>
+                    <div class="progress w-100 my-1 bg-gray-light">
+                        <div id="progressbar" class="progress-bar progress-bar-success active bg-danger rounded" role="progressbar" aria-valuenow="1"
+                            aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                    <span class="w-100 text-center tx-11 text-dark">*Meta: superar resultado Colecta Online 2024 <span class="bg-light py-1 px-2 font-red rounded">$276.900.000</span></span>
+                </div>
+                <!--Total 2024: -->
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="r" value="@ViewBag.ID" />
+
+@section Scripts
+{
+    <script src="~/js/consultaalcancia.js" charset="utf-8" type="module" asp-append-version="true"></script>
+    <script src="~/js/amount.js" charset="utf-8" type="module" asp-append-version="true"></script>
+    <script src="~/js/ayudas.js" charset="utf-8" type="module" asp-append-version="true"></script>
+}

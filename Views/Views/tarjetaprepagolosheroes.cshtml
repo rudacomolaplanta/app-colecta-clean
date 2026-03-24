@@ -1,0 +1,157 @@
+﻿
+@{
+    ViewData["Title"] = "Camapaña Tarjeta Prepago Los Héroes";
+}
+
+<div class="row w-100 g-0 g-lg-4 g-xl-4">
+
+    <div class="d-none d-lg-block col-xl-6 col-lg-6 animation-zidex pos-relative pad-600-3" style="background-image: url('/img/2023/regular_lateral_1080x1080.png'); background-size:cover;background-position:center;min-height: 100vh;">
+        <!--
+            <span class="text-red p-1 m-0" style="background-color:white;border-radius:15px;letter-spacing:-1px;position:fixed; bottom:0px;left:1vw; z-index:999; font-size:20px;font-weight:700">Si quieres inscribirte como voluntario ingresa <a href="https://voluntarios.coaniquem.cl" target="_blank">aquí</a></span>
+        -->
+    </div>
+
+    <div class="col-xl-6 col-lg-6 col-md-12 d-flex flex-column" style="align-self: center;">
+        <!--Cabecera-->
+        <div class="row d-none d-lg-block">
+            <div class="col-lg-12 d-flex justify-content-center mb-4">
+                <!--mg src="~/img/cabecera-colecta-online.jpg" style="width: 55%" alt="logo_coaniquem" />-->
+                <img src="~/img/campanalosheroes/logo.png" style="height: 100px; margin-right: 15px;" alt="logo_coaniquem" />
+                <img src="~/img/campanalosheroes/Logo Cuenta Los Heroes Prepago- color.png" style="height:90px;" />
+            </div>
+        </div>
+
+        <img src="/img/2023/regular_lateral_500x300.png" style="width:100%" class="d-block d-lg-none" />
+
+        <div class="pad-600-2">
+            <!--monto-->
+            <div class="row mt-3">
+                <div class="col-lg-12">
+                    <h5 class="text-red font-weight-boldy">INGRESA EL MONTO QUE QUIERES DONAR</h5>
+                    <input type="text" inputmode="numeric" min="500" class="input-monto-clh w-100" placeholder="$" name="valor" id="valor">
+                </div>
+                <div class="col-lg-12 d-flex justify-content-start align-items-center">
+                    <input id="email" type="email" placeholder="CORREO ELECTRÓNICO" class="input-correo-clh mt-2 w-100">
+                    <img src="/img/campana2022/question-icon.png" class="mb-1 btn-ques-email" style="height:3vh;width:3vh">
+                </div>
+            </div>
+            <!--botonera-->
+            <div class="row mt-5">
+                <h5 class="text-red font-weight-boldy" style="margin-bottom: 0.1rem;">SELECCIONA TU MEDIO DE PAGO</h5>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-4 d-flex justify-content-center">
+                        <img id="btn-webpay" name="webpay" class="pointer btn-mediopago" src="~/img/2023/botones/webpay.jpg" alt="webpay">
+                    </div>
+                    <div class="col-lg-4 d-flex justify-content-center d-none">
+                        <img id="btn-redpay" name="REDPAY" class="pointer btn-mediopago" src="~/img/campanalosheroes/redpay/RP_COLOR_H.png" alt="REDPAY">
+                    </div>
+                    <div class="col-lg-4  d-flex justify-content-center">
+                        <img id="btn-bancoestado" name="bestado" class="pointer btn-mediopago" src="~/img/2023/botones/banco_estado.jpg" alt="BancoEstado">
+                    </div>
+                </div>
+                <!--<div class="row">
+                    <div class="col-lg-3  d-flex justify-content-center">
+                        <img id="btn-servipag" name="servipag" class="pointer btn-mediopago" src="~/img/2023/botones/servipag.jpg" alt="ServiPag">
+                    </div>
+                    <div class="col-lg-3  d-flex justify-content-center">
+                        <img id="btn-flow" name="flow" class="pointer btn-mediopago" src="~/img/2023/botones/flow.jpg" alt="Flow">
+                    </div>
+                    <div class="col-lg-3  d-flex justify-content-center">
+                        <img id="btn-khipu" name="khipu" class="pointer btn-mediopago" src="~/img/2023/botones/knipu.jpg" alt="Khipu">
+                    </div>
+                    <div class="col-lg-3  d-flex justify-content-center">
+                        <img id="btn-paypal" name="paypay" class="pointer btn-mediopago" src="~/img/2023/botones/paypal.jpg" alt="PayPal">
+                    </div>
+                </div>-->
+                <div class="d-flex justify-content-center flex-wrap mt-4">
+                    <div class="mx-2">
+                        <img src="~/img/campanalosheroes/logo-itau-4096.png" alt="logo_santander" style="height:40px">
+                        <div class="rounded align-items-center" style="border-style:solid; border-color: #2E3191;">
+                            <div class="p-1 align-items-center" style="font-size: 15px">
+                                <div class="">
+                                    <div class="p-2" style="line-height:16px;">
+                                        <span style="color:#2E3191">Transferencia <strong>Banco ITAU</strong></span>
+                                        <br /><span class="text-muted fw-bold">Fundación COANIQUEM</span>
+                                        <br /><strong>Cuenta corriente:</strong> 207783449
+                                        <br /><strong>RUT:</strong> 72095000-6
+                                        <br /><strong>Email:</strong> losheroes@coaniquem.org
+                                        <br /><button type="button" id="btn-copy-itau" class="btn btn-primary p-0 px-2 mt-2 w-100" style="background-color:#2E3191; border:0px;"><i class="fa-solid fa-copy"></i> copiar datos</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalRedPay" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen-md-down modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex flex-column align-items-center">
+                <div id="qrcontainer" class="" style="align-items:center;"></div>
+                <span id="" class="token_number input text-muted h4 fw-bolder"></span>
+                <span class="text-muted">Tienes <span class="fw-bolder" id="time">05:00</span> para validar el pago</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalRedPay-mobile" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen-md-down modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex flex-column align-items-center">
+                <img src="~/img/campanalosheroes/redpay/RP_COLOR_H.png" class="w-100"/>
+                <span class="input text-muted h4 fw-bolder">Se generó un token de pago, presione aquí para ir a pagar o cierre la ventana para cancelar.</span>
+                <!--<span id="" class="token_number input text-muted h6"></span>-->
+                <button id="btnDirectOpen" class="btn btn-primary my-2">Ir a pagar</button>
+                <span class="text-muted">Tienes <span class="fw-bolder" id="time2">05:00</span> para validar el pago</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="r" value="TARJETAPREPAGOLOSHEROES" />
+
+@section Scripts
+{
+    <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+    <script src="~/Scripts/mediosdepago.js" charset="utf-8" type="module" asp-append-version="true"></script>
+    <script src="~/Scripts/ayudas.js" charset="utf-8" type="module" asp-append-version="true"></script>
+    
+    <script>
+
+        document.getElementById("btn-copy-itau").addEventListener("click", function (e) {
+            e.preventDefault();
+            navigator.clipboard.writeText("Fundación COANIQUEM 72095000-6 Banco ITAU Cuenta corriente 207783449 losheroes@coaniquem.org");
+        });
+
+        //download the generate image of the QR code
+        //qrCode.download({ name: "qr", extension: "svg" });
+
+        /*var qrcode = new QRCode("qrcontainer", {
+            text: "https://test.direct-open.redpay.junngla.com/b13bcb1a-6691-4658-acbf-53f25925b4df",
+            //width: 128,
+            //height: 128,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H,
+            image: "https://d2fltix0v2e0sb.cloudfront.net/dev-rainbow.svg",
+        });*/
+
+        //qrcode.clear(); // clear the code.
+        //qrcode.makeCode("http://naver.com"); // make another code.
+
+    </script>
+
+}

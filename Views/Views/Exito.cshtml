@@ -1,0 +1,36 @@
+﻿@using DocumentFormat.OpenXml.Wordprocessing
+
+@{
+    ViewBag.Title = "¡Gracias!";
+}
+
+<div class="container-sm h-100 align-content-center justify-items-center">
+    <div class="card mvw-80" >
+        <div class="d-flex flex-row justify-content-center flex-wrap">
+            <img src="@Html.Raw(GlobalConfiguration.colectaConfig.Images["exito:normal"].ToString())" class="mvw-38"
+                alt="...">
+            <video controls class="mvw-38" autoplay muted loop playsinline>
+                <source src="/video/video_agradecimiento_2025.mp4" type="video/mp4"> 
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="card-body d-flex flex-column align-items-center">
+            <a href="/" class="bg-red btn-rounded-nice">Volver a donar en la página principal</a>
+            <img src="~/img/logo.png" height="100" alt="logo_coaniquem" />
+        </div>
+    </div>
+</div>
+
+<div class="d-none">
+    <span id="valor-donado">@ViewData["v"]</span>
+</div>
+
+@section Scripts
+{
+
+    <!--https://codeberg.org/kytta/shareon/#usage-->
+    <link href="~/Content/shareon.css" rel="stylesheet" asp-append-version="true" />
+    <script src="https://cdn.jsdelivr.net/npm/shareon@2/dist/shareon.iife.js" defer init></script>
+    <script src="~/Scripts/exito.dom.imagenes.js" charset="utf-8" type="module" asp-append-version="true"></script>
+}
+

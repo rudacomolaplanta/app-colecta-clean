@@ -1,0 +1,81 @@
+﻿@using Microsoft.AspNetCore.Hosting;
+@using Microsoft.Extensions.Hosting;
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment Env
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        COANIQUEM | @ViewBag.Title
+    </title>
+    <meta name="title" content="Desafío COANIQUEM">
+    <meta name="description" content="Tú tienes el superpoder de ayudar a más de 8.000 niños y niñas que se atienden en COANIQUEM. Haz tu donación en desafiocoaniquem.cl">
+
+    <!--  Essential META Tags -->
+    <meta property="og:title" content="Desafío COANIQUEM">
+    <meta property="og:type" content="article" />
+    <!--<meta property="og:image" content="https://desafiocoaniquem.cl/img/2023/pantalla_inicio_lateral_500x300.jpg">-->
+    <meta property="og:url" content="https://desafiocoaniquem.cl">
+    <meta name="twitter:card" content="Desafío COANIQUEM">
+
+    <!--  Non-Essential, But Recommended -->
+    <meta property="og:description" content="Tú tienes el superpoder de ayudar a más de 8.000 niños y niñas que se atienden en COANIQUEM. Haz tu donación en desafiocoaniquem.cl">
+    <meta property="og:site_name" content="Desafío COANIQUEM">
+    <meta name="twitter:image:alt" content="Desafío COANIQUEM">
+
+    <!--  Non-Essential, But Required for Analytics -->
+    <meta property="fb:app_id" content="your_app_id" />
+    <meta name="twitter:site" content="">
+
+    <!--CUSTOM CSS DESAFIO-->
+    <link href="~/fonts/pluto/PlutoFont.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+    <link href="~/fonts/filson-pro/FilsonProFont.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+    <link href="~/site.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+    <link href="~/loader.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+
+    <link rel="stylesheet" href="/assets/libs/bootstrap/5.1.3.bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/libs/sweetalert/11.4.6.sweetalert2.css" >
+    <link rel="stylesheet" href="/assets/libs/font-awesome/6.4.0.all.min.css" />
+    <link rel="shortcut icon" href="~/img/Favicon.ico">
+
+    <!--Tags producción-->
+    @if (Env.IsProduction())
+    {
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMSY21YWKD"></script>
+        <script src="~/js/analytics.js" asp-append-version="true"></script>
+    }
+
+</head>
+<body>
+    
+    @if (Env.IsProduction())
+    {
+        <!--Tags producción-->
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KF8DMGV"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    }
+    else
+    {
+        <!--En desarrollo no tenemos tags GTAG-->
+    }
+
+    <div id="main-container" class="w-100 h-100 align-center">
+        @RenderBody()
+    </div>
+
+    <script src="/assets/libs/font-awesome/6.4.0.all.min.js"></script>
+    <script src="/assets/libs/bootstrap/5.1.3.bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/sweetalert/11.4.6.sweetalert2.all.min.js"></script>
+    <script src="/assets/libs/qr-code/1.5.0.qr-code-styling.js"></script>
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

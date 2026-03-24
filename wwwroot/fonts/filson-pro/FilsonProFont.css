@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'Filson Pro Regular';
+    src: url('FilsonProRegular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Filson Pro Bold';
+    src: url('FilsonProBold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Filson Pro Light';
+    src: url('FilsonProLight.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Filson Pro Medium';
+    src: url('FilsonProMedium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Filson Pro Black';
+    src: url('FilsonProBlack.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}

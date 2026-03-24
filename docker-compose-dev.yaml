@@ -1,0 +1,35 @@
+version: '3.1'
+services:
+  cqm:
+    network_mode: bridge
+    build: 
+      context: .
+      dockerfile: Dockerfile-dev
+    ports:
+      - "8087:8087"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 10G 
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+  mysql:
+    container_name: app-colecta_mysql
+    restart: always
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: 'dfqm'
+      MYSQL_ROOT_PASSWORD: '<PASSWORD_PLACEHOLDER>'
+      MYSQL_USER: 'desafio'
+      MYSQL_PASS: '<PASSWORD_PLACEHOLDER>'
+      TZ: 'America/Santiago'
+    volumes:
+      - my-datavolume:/var/lib/mysql
+    ports:
+      - '3306:3306'
+volumes:
+  my-datavolume:
